@@ -6,5 +6,4 @@ enum class PaymentError {
     INVALID_INSTALLMENT_TYPE,
     INVALID_INSTALLMENTS,
     INVALID_STATE,
-    INVALID_SETUP,
 }

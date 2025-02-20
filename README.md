@@ -1,4 +1,4 @@
-# SmartCoffee (Demo PPS)
+# SmartCoffee
 
 Demonstração de como implementar o PlugPagServiceWrapper em uma aplicação Android na Moderninha Smart.
 

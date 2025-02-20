@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -185,27 +184,8 @@ class PaymentFragment : Fragment() {
 
         paymentViewModel.error.observe(viewLifecycleOwner) {
             if (it == null) return@observe
-            when (it) {
-                PaymentError.INVALID_AMOUNT -> {
-                    binding.tvInput.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake))
-                }
-                PaymentError.INVALID_STATE -> {
-                    Toast.makeText(
-                        requireContext(),
-                        R.string.not_authenticated,
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                PaymentError.INVALID_SETUP -> {
-                    Toast.makeText(
-                        requireContext(),
-                        R.string.no_pps_found,
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                else -> {
-                    // do nothing
-                }
+            if (it == PaymentError.INVALID_AMOUNT) {
+                binding.tvInput.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake))
             }
             paymentViewModel.resetState()
         }
