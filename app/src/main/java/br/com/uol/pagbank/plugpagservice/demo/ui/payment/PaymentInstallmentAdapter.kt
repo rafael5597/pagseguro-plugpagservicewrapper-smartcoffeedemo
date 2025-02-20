@@ -58,7 +58,6 @@ class PaymentInstallmentAdapter(
 
         private var tvInstallmentAmount: TextView = itemView.findViewById<TextView>(R.id.tvInstallmentAmount)
         private var tvInstallmentValue: TextView = itemView.findViewById<TextView>(R.id.tvInstallmentValue)
-        private var tvInstallmentTotalValue: TextView = itemView.findViewById<TextView>(R.id.tvInstallmentTotalValue)
 
         init {
             itemView.setOnClickListener(this)
@@ -68,9 +67,8 @@ class PaymentInstallmentAdapter(
             this.plugPagInstallment = plugPagInstallment
             this.clickListener = clickListener
 
-            this.tvInstallmentAmount.text = "${plugPagInstallment.quantity} x"
+            this.tvInstallmentAmount.text = "${plugPagInstallment.quantity}"
             this.tvInstallmentValue.text = "%.2f".format(plugPagInstallment.amount / 100f)
-            this.tvInstallmentTotalValue.text = "= %.2f".format(plugPagInstallment.total / 100f)
         }
 
         override fun onClick(view: View) {

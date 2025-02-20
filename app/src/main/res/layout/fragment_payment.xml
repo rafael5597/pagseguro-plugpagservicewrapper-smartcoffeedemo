@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    android:background="#ffffff"
+    tools:context=".ComposeActivity">
 
     <TextView
         android:id="@+id/tvInput"
@@ -23,10 +23,9 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <View
-        android:id="@+id/lnValue"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/line_value"
+        android:background="@color/black"
         android:layout_marginBottom="@dimen/keyboard_button_margin"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -51,7 +50,7 @@
             android:minHeight="@dimen/keyboard_line">
 
             <Button
-                android:id="@+id/btnOne"
+                android:id="@+id/btnSeven"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -60,10 +59,10 @@
                 android:textColor="@color/black"
                 android:background="@drawable/btn_rounded"
                 app:backgroundTint="@null"
-                android:text="@string/one" />
+                android:text="@string/seven" />
 
             <Button
-                android:id="@+id/btnTwo"
+                android:id="@+id/btnEight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -72,10 +71,10 @@
                 android:textColor="@color/black"
                 android:background="@drawable/btn_rounded"
                 app:backgroundTint="@null"
-                android:text="@string/two" />
+                android:text="@string/eight" />
 
             <Button
-                android:id="@+id/btnThree"
+                android:id="@+id/btnNine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -84,7 +83,8 @@
                 android:textColor="@color/black"
                 android:background="@drawable/btn_rounded"
                 app:backgroundTint="@null"
-                android:text="@string/three" />
+                android:text="@string/nine" />
+
 
         </LinearLayout>
 
@@ -141,7 +141,7 @@
             android:minHeight="@dimen/keyboard_line">
 
             <Button
-                android:id="@+id/btnSeven"
+                android:id="@+id/btnOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -150,10 +150,10 @@
                 android:textColor="@color/black"
                 android:background="@drawable/btn_rounded"
                 app:backgroundTint="@null"
-                android:text="@string/seven" />
+                android:text="@string/one" />
 
             <Button
-                android:id="@+id/btnEight"
+                android:id="@+id/btnTwo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -162,10 +162,10 @@
                 android:textColor="@color/black"
                 android:background="@drawable/btn_rounded"
                 app:backgroundTint="@null"
-                android:text="@string/eight" />
+                android:text="@string/two" />
 
             <Button
-                android:id="@+id/btnNine"
+                android:id="@+id/btnThree"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -174,7 +174,7 @@
                 android:textColor="@color/black"
                 android:background="@drawable/btn_rounded"
                 app:backgroundTint="@null"
-                android:text="@string/nine" />
+                android:text="@string/three" />
 
         </LinearLayout>
 
@@ -251,7 +251,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:clickable="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -261,7 +260,6 @@
             android:id="@+id/bgType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/value_height"
             android:background="@color/over" />
 
         <TextView
@@ -276,7 +274,7 @@
             android:text="@string/select_type"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/bgType" />
+            app:layout_constraintBottom_toTopOf="@+id/btnDebit" />
 
         <Button
             android:id="@+id/btnDebit"
@@ -285,13 +283,12 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/debit"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvType" />
+            app:layout_constraintBottom_toTopOf="@+id/btnCredit" />
 
         <Button
             android:id="@+id/btnCredit"
@@ -300,13 +297,12 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/credit"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnDebit" />
+            app:layout_constraintBottom_toTopOf="@+id/btnVoucher" />
 
         <Button
             android:id="@+id/btnVoucher"
@@ -315,13 +311,12 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/voucher"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCredit" />
+            app:layout_constraintBottom_toTopOf="@+id/btnPix" />
 
         <Button
             android:id="@+id/btnPix"
@@ -330,19 +325,18 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/pix"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnVoucher" />
+            app:layout_constraintBottom_toTopOf="@+id/lnType" />
 
         <View
-            android:id="@+id/lnType"
+            android:id="@id/lnType"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/line"
+            android:background="@color/black"
             android:layout_marginVertical="@dimen/keyboard_button_margin"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -354,10 +348,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
-            android:textSize="@dimen/option_size"
-            android:textColor="@color/black"
+            android:textSize="@dimen/keyboard_number_size"
             android:background="@drawable/btn_rounded"
-            app:backgroundTint="@color/gray_light"
             android:minHeight="@dimen/option_line"
             android:text="@string/cancel"
             app:layout_constraintRight_toRightOf="parent"
@@ -371,7 +363,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:clickable="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -381,7 +372,6 @@
             android:id="@+id/bgInstallmentType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/value_height"
             android:background="@color/over" />
 
         <TextView
@@ -393,10 +383,10 @@
             android:layout_marginVertical="@dimen/title_margin"
             android:textSize="@dimen/title_size"
             android:textColor="@color/black"
-            android:text="@string/select_intallment_type"
+            android:text="@string/select_type"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/bgInstallmentType" />
+            app:layout_constraintBottom_toTopOf="@+id/btnSingle" />
 
         <Button
             android:id="@+id/btnSingle"
@@ -405,13 +395,12 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/single"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvInstallmentType" />
+            app:layout_constraintBottom_toTopOf="@+id/btnVendedor" />
 
         <Button
             android:id="@+id/btnVendedor"
@@ -420,13 +409,12 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/vendedor"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnSingle" />
+            app:layout_constraintBottom_toTopOf="@+id/btnComprador" />
 
         <Button
             android:id="@+id/btnComprador"
@@ -435,23 +423,22 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/comprador"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnVendedor" />
+            app:layout_constraintBottom_toTopOf="@+id/lnInstallmentType" />
 
         <View
-            android:id="@+id/lnInstallmentType"
+            android:id="@id/lnInstallmentType"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/line"
+            android:background="@color/black"
             android:layout_marginVertical="@dimen/keyboard_button_margin"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btnCancelInstallmentType" />
+            app:layout_constraintBottom_toTopOf="@+id/btnCancelInstallmentType" />
 
         <Button
             android:id="@+id/btnCancelInstallmentType"
@@ -460,9 +447,7 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/black"
             android:background="@drawable/btn_rounded"
-            app:backgroundTint="@color/gray_light"
             android:minHeight="@dimen/option_line"
             android:text="@string/cancel"
             app:layout_constraintRight_toRightOf="parent"
@@ -476,7 +461,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:clickable="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -486,7 +470,6 @@
             android:id="@+id/bgInstallmentAmount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/value_height"
             android:background="@color/over" />
 
         <TextView
@@ -501,23 +484,22 @@
             android:text="@string/select_intallment_amount"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="@id/bgInstallmentAmount" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rclInstallmentAmount"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            tools:listitem="@layout/fragment_payment_installment"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvInstallmentAmount"
-            app:layout_constraintBottom_toTopOf="@id/lnInstallmentAmount" />
+            app:layout_constraintTop_toBottomOf="@+id/tvInstallmentAmount"
+            app:layout_constraintBottom_toTopOf="@+id/lnInstallmentAmount" />
 
         <View
             android:id="@+id/lnInstallmentAmount"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/line"
+            android:background="@color/black"
             android:layout_marginVertical="@dimen/keyboard_button_margin"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -530,9 +512,7 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/black"
             android:background="@drawable/btn_rounded"
-            app:backgroundTint="@color/gray_light"
             android:minHeight="@dimen/option_line"
             android:text="@string/cancel"
             app:layout_constraintRight_toRightOf="parent"
@@ -546,7 +526,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:clickable="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -580,12 +559,9 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/black"
             android:background="@drawable/btn_rounded"
-            app:backgroundTint="@color/gray_light"
             android:minHeight="@dimen/option_line"
             android:text="@string/cancel"
-            android:visibility="gone"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -597,7 +573,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-        android:clickable="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -631,7 +606,6 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/try_again_debit"
@@ -647,7 +621,6 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/try_again_credit"
@@ -663,7 +636,6 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/try_again_voucher"
@@ -679,20 +651,19 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/try_again"
             android:visibility="gone"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/lnResult" />
+            app:layout_constraintBottom_toTopOf="@+id/lnResult" />
 
         <View
             android:id="@+id/lnResult"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/line"
+            android:background="@color/black"
             android:layout_marginVertical="@dimen/keyboard_button_margin"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -705,7 +676,6 @@
             android:layout_weight="1"
             android:layout_margin="@dimen/keyboard_button_margin"
             android:textSize="@dimen/option_size"
-            android:textColor="@color/white"
             android:background="@drawable/btn_rounded"
             android:minHeight="@dimen/option_line"
             android:text="@string/back"
